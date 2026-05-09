@@ -1,0 +1,47 @@
+@use './variables' as *;
+
+.about-us {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  padding-inline: 20px;
+  padding-top: 60px;
+
+  @media (min-width: $tablet-min-width) {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding-inline: 72px;
+    padding-top: 120px;
+  }
+
+  @media (min-width: $desktop-min-width) {
+    padding-inline: 120px;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+  }
+
+  &__title {
+    font-size: $section-title-size;
+    font-weight: $section-title-weight;
+    letter-spacing: $section-title-letter-spacing;
+
+    @media (min-width: $tablet-min-width) {
+      font-size: $section-title-size-tablet;
+    }
+
+    @media (min-width: $desktop-min-width) {
+      grid-column: 1 / 6;
+      font-size: $header-bottom-title-font-size-tablet;
+    }
+  }
+
+  &__description {
+    font-weight: $section-title-weight;
+    font-size: 23px;
+    line-height: 140%;
+
+    @media (min-width: $desktop-min-width) {
+      grid-column: 6 / 12;
+    }
+  }
+}
