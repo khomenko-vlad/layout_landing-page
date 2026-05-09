@@ -1,9 +1,10 @@
 @use 'variables' as *;
+@use './mixins' as *;
 
 .header {
   background-size: cover;
-  background-position: right top;
-  height: 480px;
+  background-position: center;
+  height: 100vh;
   background-image: url(../images/header-bg-mobile.png);
 
   display: flex;
@@ -11,12 +12,10 @@
   justify-content: space-between;
 
   @media (min-width: $tablet-min-width) {
-    height: 628px;
     background-image: url(../images/header-bg-tablet.png);
   }
 
   @media (min-width: $desktop-min-width) {
-    height: 711px;
     background-image: url(../images/header-bg-desktop.png);
   }
 
@@ -40,18 +39,18 @@
   }
 
   &__title {
-    font-weight: $bike-card-title-weight;
+    font-weight: $font-weight-bold;
     text-align: center;
-    font-size: $header-bottom-title-font-size;
+    font-size: $font-size;
     line-height: 100%;
     letter-spacing: $section-title-letter-spacing;
 
     @media (min-width: $tablet-min-width) {
-      font-size: $header-bottom-title-font-size-tablet;
+      font-size: $font-size-tablet;
     }
 
     @media (min-width: $desktop-min-width) {
-      font-size: $header-bottom-title-font-size-desktop;
+      font-size: $font-size-desktop;
     }
   }
 
@@ -76,9 +75,10 @@
     align-items: center;
 
     &-number {
+      transition: $transition-default;
       display: none;
       text-decoration: none;
-      font-weight: $bike-card-title-weight;
+      font-weight: $font-weight-bold;
       font-size: 12px;
       letter-spacing: 2px;
       opacity: 0;

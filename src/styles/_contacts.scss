@@ -1,20 +1,20 @@
 @use './variables' as *;
+@use './mixins' as *;
 
 .contacts {
   gap: 48px;
   padding-top: 80px;
   display: flex;
   flex-direction: column;
-  padding-inline: 20px;
+
+  @include page-padding;
 
   @media (min-width: $tablet-min-width) {
     padding-top: 120px;
-    padding-inline: 72px;
   }
 
   @media (min-width: $desktop-min-width) {
     padding-top: 180px;
-    padding-inline: 120px;
   }
 
   &__title {
@@ -123,13 +123,14 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-
-    & *:hover {
-      color: $contact-hover-color;
-    }
   }
 
   &__text {
+    transition: $transition-default;
     text-decoration: none;
+
+    &:hover {
+      color: $contact-hover-color;
+    }
   }
 }

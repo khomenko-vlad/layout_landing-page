@@ -1,24 +1,24 @@
 @use './variables' as *;
+@use './mixins' as *;
 
 .details {
   padding-top: 92px;
-  padding-inline: 20px;
   display: flex;
   flex-direction: column;
   gap: 48px;
 
+  @include page-padding;
+
   @media (min-width: $tablet-min-width) {
     padding-top: 120px;
-    padding-inline: 72px;
   }
 
   @media (min-width: $desktop-min-width) {
     padding-top: 144px;
-    padding-inline: 120px;
   }
 
   &__title {
-    font-weight: $section-title-weight;
+    font-weight: $font-weight-medium;
     font-size: $section-title-size;
     letter-spacing: $section-title-letter-spacing;
     align-self: center;
@@ -92,6 +92,10 @@
         @media (min-width: $tablet-min-width) {
           height: 187px;
         }
+
+        @media (min-width: $desktop-min-width) {
+          height: 320px;
+        }
       }
     }
 
@@ -116,14 +120,14 @@
   }
 
   &__title {
-    font-weight: $bike-card-title-weight;
-    font-size: $bike-card-title-font-size;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-medium;
     line-height: 140%;
   }
 
   &__description {
-    font-weight: $bike-card-description-weight;
-    font-size: $bike-card-description-font-size;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-small;
     line-height: 140%;
   }
 }

@@ -14,7 +14,7 @@
   text-decoration: none;
   z-index: 5;
   opacity: 0.5;
-  transition: all 0.3s ease;
+  transition: $transition-default;
 
   @media (min-width: $tablet-min-width) {
     right: 72px;

@@ -1,4 +1,5 @@
 @use './variables' as *;
+@use './mixins' as *;
 
 .button {
   display: flex;
@@ -11,10 +12,12 @@
   color: $button-text-color;
   text-decoration: none;
   cursor: pointer;
-  font-weight: $bike-card-title-weight;
-  font-size: $bike-card-description-font-size;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-small;
   line-height: 27px;
   border: none;
+
+  transition: $transition-default;
 
   &:hover {
     transform: scale(0.93);

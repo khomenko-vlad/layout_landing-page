@@ -1,25 +1,25 @@
 @use './variables' as *;
+@use './mixins' as *;
 
 .compare-bikes {
   display: flex;
   flex-direction: column;
   padding-top: 92px;
   gap: 48px;
-  padding-inline: 20px;
+
+  @include page-padding;
 
   @media (min-width: $tablet-min-width) {
     padding-top: 132px;
-    padding-inline: 176px;
   }
 
   @media (min-width: $desktop-min-width) {
     padding-top: 164px;
     gap: 56px;
-    padding-inline: 120px;
   }
 
   &__title {
-    font-weight: $section-title-weight;
+    font-weight: $font-weight-medium;
     font-size: $section-title-size;
     letter-spacing: $section-title-letter-spacing;
     align-self: center;
@@ -50,11 +50,11 @@
   &__link {
     display: block;
     overflow: hidden;
+    transition: $transition-default;
 
     & img {
       display: block;
       width: 100%;
-      transition: all 0.3s ease;
     }
 
     &:hover {
@@ -68,21 +68,21 @@
   }
 
   &__title {
-    font-weight: $bike-card-title-weight;
-    font-size: $bike-card-title-font-size;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-medium;
     margin-top: 32px;
   }
 
   &__description {
     margin-top: 8px;
-    font-weight: $bike-card-description-weight;
-    font-size: $bike-card-description-font-size;
+    font-weight: $font-weight-regular;
+    font-size: $font-size-small;
   }
 
   &__price {
     margin-top: 16px;
-    font-weight: $bike-card-price-weight;
-    font-size: $bike-card-price-font-size;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-medium;
 
     @media (min-width: $tablet-min-width) {
       margin-top: 32px;
