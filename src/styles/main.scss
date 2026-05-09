@@ -23,6 +23,6 @@ body {
   background-color: rgba(29, 29, 29, 1);
 }
 
-.pade:has(page__menu:target) {
+.pade:has(.page__menu:target) {
   overflow: hidden;
 }
